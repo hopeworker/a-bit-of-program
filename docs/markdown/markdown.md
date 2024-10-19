@@ -23,7 +23,7 @@
 ### 三级标题惹人爱
 ```
 
-## block
+## 块引用
 
 > 这是大石块
 >> 小石块
@@ -32,6 +32,7 @@
 > 这是大石块
 >> 小石块
 ```
+
 
 ## md block
 
@@ -96,3 +97,25 @@ function hello() {
 }
 ```
 ````
+
+## 自定义块样式
+:::danger
+下面的样式在Markdown里是可以用的，但是 Docusaurus里会报错
+:::
+```html
+<blockquote style="border-left: 5px solid #409eff; background-color: #ecf5ff; padding: 10px;">
+这是大石块
+</blockquote>
+```
+在 Docusaurus中, Markdown 文件是以 MDX (Markdown + JSX)形式处理的，所以需要按照 JSX 的语法来定义样式。
+把上面的定义改写成下面的代码，就可以了。
+
+````jsx
+<blockquote style={{borderLeft: '5px solid #409eff', backgroundColor: '#ecf5ff', padding: '10px'}}>
+这是大石块
+</blockquote>
+````
+
+<blockquote style={{borderLeft: '5px solid #409eff', backgroundColor: '#ecf5ff', padding: '10px'}}>
+这是大石块
+</blockquote>
