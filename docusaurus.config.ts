@@ -75,11 +75,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '知识库',
+          label: '点滴积累',
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/hopeworker/a-bit-of-program',
           label: 'GitHub',
           position: 'right',
         },
