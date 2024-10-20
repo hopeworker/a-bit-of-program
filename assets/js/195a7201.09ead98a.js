@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunka_bit_of_program=self.webpackChunka_bit_of_program||[]).push([[9701],{6103:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/a-bit-of-program/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

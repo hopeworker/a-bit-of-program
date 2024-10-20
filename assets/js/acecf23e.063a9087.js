@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunka_bit_of_program=self.webpackChunka_bit_of_program||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/a-bit-of-program/blog","blogTitle":"Blog","authorsListPath":"/a-bit-of-program/blog/authors"}')}}]);
