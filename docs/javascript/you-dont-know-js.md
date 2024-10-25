@@ -100,3 +100,116 @@ const theGlobalScopeObject =
     (typeof self != "undefined") ? self :
     (new Function("return this"))();
 ```
+
+## Chapter 5: The (Not So) Secret Lifecycle of Variables
+
+### Hoisting: Declaration vs. Expression
+A function declaration is hoisted and initialized to its function value (again, called function hoisting). A var variable is also hoisted, and then auto-initialized to undefined. Any subsequent function expression assignments to that variable don't happen until that assignment is processed during runtime execution.
+
+```javascript
+greeting();
+// TypeError
+
+var greeting = function greeting() {
+    console.log("Hello!");
+};
+```
+
+```javascript
+greeting = "Hello!";
+console.log(greeting);
+// Hello!
+
+var greeting = "Howdy!";
+```
+
+### Re-declaration?
+
+```javascript
+var studentName = "Frank";
+console.log(studentName);
+// Frank
+
+var studentName;
+console.log(studentName);   // ???
+```
+hoisting is actually about registering a variable at the beginning of a scope
+
+```javascript
+var studentName = "Frank";
+console.log(studentName);   // Frank
+
+var studentName;
+console.log(studentName);   // Frank <--- still!
+
+// let's add the initialization explicitly
+var studentName = undefined;
+console.log(studentName);   // undefined <--- see!?
+```
+
+```javascript
+var greeting;
+
+function greeting() {
+    console.log("Hello!");
+}
+
+// basically, a no-op
+var greeting;
+
+typeof greeting;        // "function"
+
+var greeting = "Hello!";
+
+typeof greeting;        // "string"
+```
+
+```javascript
+let studentName = "Frank";
+
+var studentName = "Suzy"; // SyntaxError
+```
+
+### Loop
+
+```javascript
+var keepGoing = true;
+while (keepGoing) {
+    let value = Math.random();
+    if (value > 0.5) {
+        keepGoing = false;
+    }
+}
+```
+All the rules of scope (including "re-declaration" of let-created variables) are applied per scope instance. In other words, each time a scope is entered during execution, everything resets.
+
+Each loop iteration is its own new scope instance, and within each scope instance, value is only being declared once.
+
+
+### TDZ
+The TDZ is the time window where a variable exists but is still uninitialized, and therefore cannot be accessed in any way. Only the execution of the instructions left by Compiler at the point of the original declaration can do that initialization. After that moment, the TDZ is done, and the variable is free to be used for the rest of the scope.
+
+```javascript
+studentName = "Suzy";   // let's try to initialize it!
+// ReferenceError
+
+console.log(studentName);
+
+let studentName;
+```
+
+```javascript
+var studentName = "Kyle";
+
+{
+    console.log(studentName);
+    // ???
+
+    // ..
+
+    let studentName = "Suzy";
+
+    console.log(studentName);
+    // Suzy
+}
+```
