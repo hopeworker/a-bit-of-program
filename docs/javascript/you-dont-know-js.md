@@ -213,3 +213,46 @@ var studentName = "Kyle";
     // Suzy
 }
 ```
+
+## Chapter 6: Limiting Scope Exposure
+### Hiding in Plain (Function) Scope
+
+```javascript
+var factorial = (function hideTheCache() {
+    var cache = {};
+
+    function factorial(x) {
+        if (x < 2) return 1;
+        if (!(x in cache)) {
+            cache[x] = x * factorial(x - 1);
+        }
+        return cache[x];
+    }
+
+    return factorial;
+})();
+
+factorial(6);
+// 720
+
+factorial(7);
+// 5040
+```
+So, in other words, we're defining a function expression that's then immediately invoked. This common pattern has a (very creative!) name: Immediately Invoked Function Expression (IIFE).
+
+### var and let
+var attaches to the nearest enclosing function scope, no matter where it appears. That's true even if var appears inside a block:
+
+```javascript
+function diff(x,y) {
+    if (x > y) {
+        var tmp = x;    // `tmp` is function-scoped
+        x = y;
+        y = tmp;
+    }
+
+    return y - x;
+}
+```
+
+
