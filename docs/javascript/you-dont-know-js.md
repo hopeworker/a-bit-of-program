@@ -186,6 +186,37 @@ All the rules of scope (including "re-declaration" of let-created variables) are
 Each loop iteration is its own new scope instance, and within each scope instance, value is only being declared once.
 
 
+```javascript
+for (let i = 0; i < 3; i++) {
+    let value = i * 10;
+    console.log(`${ i }: ${ value }`);
+}
+// 0: 0
+// 1: 10
+// 2: 20
+```
+
+equivalent form
+
+```javascript
+{
+    // a fictional variable for illustration
+    let $$i = 0;
+
+    for ( /* nothing */; $$i < 3; $$i++) {
+        // here's our actual loop `i`!
+        let i = $$i;
+
+        let value = i * 10;
+        console.log(`${ i }: ${ value }`);
+    }
+    // 0: 0
+    // 1: 10
+    // 2: 20
+}
+```
+
+
 ### TDZ
 The TDZ is the time window where a variable exists but is still uninitialized, and therefore cannot be accessed in any way. Only the execution of the instructions left by Compiler at the point of the original declaration can do that initialization. After that moment, the TDZ is done, and the variable is free to be used for the rest of the scope.
 
@@ -256,3 +287,78 @@ function diff(x,y) {
 ```
 
 
+## Chapter 7: Using Closures
+
+### closure is variable-oriented
+
+```javascript
+var studentName = "Frank";
+
+var greeting = function hello() {
+    // we are closing over `studentName`,
+    // not "Frank"
+    console.log(
+        `Hello, ${ studentName }!`
+    );
+}
+
+// later
+
+studentName = "Suzy";
+
+// later
+
+greeting();
+// Hello, Suzy!
+```
+
+```javascript
+var keeps = [];
+
+for (var i = 0; i < 3; i++) {
+    keeps[i] = function keepI(){
+        // closure over `i`
+        return i;
+    };
+}
+
+keeps[0]();   // 3 -- WHY!?
+keeps[1]();   // 3
+keeps[2]();   // 3
+```
+
+```javascript
+var keeps = [];
+
+for (var i = 0; i < 3; i++) {
+    // new `j` created each iteration, which gets
+    // a copy of the value of `i` at this moment
+    let j = i;
+
+    // the `i` here isn't being closed over, so
+    // it's fine to immediately use its current
+    // value in each loop iteration
+    keeps[i] = function keepEachJ(){
+        // close over `j`, not `i`!
+        return j;
+    };
+}
+keeps[0]();   // 0
+keeps[1]();   // 1
+keeps[2]();   // 2
+```
+
+```javascript
+var keeps = [];
+
+for (let i = 0; i < 3; i++) {
+    // the `let i` gives us a new `i` for
+    // each iteration, automatically!
+    keeps[i] = function keepEachI(){
+        return i;
+    };
+}
+keeps[0]();   // 0
+keeps[1]();   // 1
+keeps[2]();   // 2
+```
