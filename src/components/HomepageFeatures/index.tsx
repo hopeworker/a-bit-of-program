@@ -42,7 +42,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: '',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/sea-sun.svg').default,
     description: (
       <>
         <Link
