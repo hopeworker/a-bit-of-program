@@ -362,3 +362,145 @@ keeps[0]();   // 0
 keeps[1]();   // 1
 keeps[2]();   // 2
 ```
+
+### Per Variable or Per Scope?
+
+![debug closure](./debug-closure.png)
+
+### An Alternative Perspective
+
+```javascript
+// outer/global scope: RED(1)
+
+function adder(num1) {
+    // function scope: BLUE(2)
+
+    return function addTo(num2){
+        // function scope: GREEN(3)
+
+        return num1 + num2;
+    };
+}
+
+var add10To = adder(10);
+var add42To = adder(42);
+
+add10To(15);    // 25
+add42To(9);     // 51
+```
+
+![Visualizing Closures](./Visualizing%20Closures.png)
+
+### Why Closure?
+
+```javascript
+var APIendpoints = {
+    studentIDs:
+        "https://some.api/register-students",
+    // ..
+};
+
+var data = {
+    studentIDs: [ 14, 73, 112, 6 ],
+    // ..
+};
+
+function makeRequest(evt) {
+    var btn = evt.target;
+    var recordKind = btn.dataset.kind;
+    ajax(
+        APIendpoints[recordKind],
+        data[recordKind]
+    );
+}
+
+// <button data-kind="studentIDs">
+//    Register Students
+// </button>
+btn.addEventListener("click",makeRequest);
+```
+it's unfortunate (inefficient, more confusing) that the event handler has to read a DOM attribute each time it's fired.
+
+
+```javascript
+var APIendpoints = {
+    studentIDs:
+        "https://some.api/register-students",
+    // ..
+};
+
+var data = {
+    studentIDs: [ 14, 73, 112, 6 ],
+    // ..
+};
+
+function setupButtonHandler(btn) {
+    var recordKind = btn.dataset.kind;
+
+    btn.addEventListener(
+        "click",
+        function makeRequest(evt){
+            ajax(
+                APIendpoints[recordKind],
+                data[recordKind]
+            );
+        }
+    );
+}
+
+// <button data-kind="studentIDs">
+//    Register Students
+// </button>
+
+setupButtonHandler(btn);
+```
+
+```javascript
+function setupButtonHandler(btn) {
+    var recordKind = btn.dataset.kind;
+    var requestURL = APIendpoints[recordKind];
+    var requestData = data[recordKind];
+
+    btn.addEventListener(
+        "click",
+        function makeRequest(evt){
+            ajax(requestURL,requestData);
+        }
+    );
+}
+```
+
+
+Two similar techniques from the Functional Programming (FP) paradigm that rely on closure are partial application and currying. Briefly, with these techniques, we alter the shape of functions that require multiple inputs so some inputs are provided up front, and other inputs are provided later; the initial inputs are remembered via closure. Once all inputs have been provided, the underlying action is performed.
+
+
+```javascript
+function defineHandler(requestURL,requestData) {
+    return function makeRequest(evt){
+        ajax(requestURL,requestData);
+    };
+}
+
+function setupButtonHandler(btn) {
+    var recordKind = btn.dataset.kind;
+    var handler = defineHandler(
+        APIendpoints[recordKind],
+        data[recordKind]
+    );
+    btn.addEventListener("click",handler);
+}
+```
+
+
+### Summary
+We explored two models for mentally tackling closure:
+
+Observational: closure is a function instance remembering its outer variables even as that function is passed to and invoked in other scopes.
+
+Implementational: closure is a function instance and its scope environment preserved in-place while any references to it are passed around and invoked from other scopes.
+
+Benefits to our programs:
+
+Closure can improve efficiency by allowing a function instance to remember previously determined information instead of having to compute it each time.
+
+Closure can improve code readability, bounding scope-exposure by encapsulating variable(s) inside function instances, while still making sure the information in those variables is accessible for future use. The resultant narrower, more specialized function instances are cleaner to interact with, since the preserved information doesn't need to be passed in every invocation.
