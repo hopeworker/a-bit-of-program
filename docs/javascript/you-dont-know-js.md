@@ -504,3 +504,168 @@ Benefits to our programs:
 Closure can improve efficiency by allowing a function instance to remember previously determined information instead of having to compute it each time.
 
 Closure can improve code readability, bounding scope-exposure by encapsulating variable(s) inside function instances, while still making sure the information in those variables is accessible for future use. The resultant narrower, more specialized function instances are cleaner to interact with, since the preserved information doesn't need to be passed in every invocation.
+
+
+
+## Chapter 8: The Module Pattern
+
+### Data Structures (Stateful Grouping)
+
+```javascript
+// data structure, not module
+var Student = {
+    records: [
+        { id: 14, name: "Kyle", grade: 86 },
+        { id: 73, name: "Suzy", grade: 87 },
+        { id: 112, name: "Frank", grade: 75 },
+        { id: 6, name: "Sarah", grade: 91 }
+    ],
+    getName(studentID) {
+        var student = this.records.find(
+            student => student.id == studentID
+        );
+        return student.name;
+    }
+};
+
+Student.getName(73);
+// Suzy
+```
+### Use IIFE as module (singleton)
+```javascript
+var Student = (function defineStudent(){
+    var records = [
+        { id: 14, name: "Kyle", grade: 86 },
+        { id: 73, name: "Suzy", grade: 87 },
+        { id: 112, name: "Frank", grade: 75 },
+        { id: 6, name: "Sarah", grade: 91 }
+    ];
+
+    var publicAPI = {
+        getName
+    };
+
+    return publicAPI;
+
+    // ************************
+
+    function getName(studentID) {
+        var student = records.find(
+            student => student.id == studentID
+        );
+        return student.name;
+    }
+})();
+
+Student.getName(73);   // Suzy
+```
+
+### use function for multi-instances
+```javascript
+// factory function, not singleton IIFE
+function defineStudent() {
+    var records = [
+        { id: 14, name: "Kyle", grade: 86 },
+        { id: 73, name: "Suzy", grade: 87 },
+        { id: 112, name: "Frank", grade: 75 },
+        { id: 6, name: "Sarah", grade: 91 }
+    ];
+
+    var publicAPI = {
+        getName
+    };
+
+    return publicAPI;
+
+    // ************************
+
+    function getName(studentID) {
+        var student = records.find(
+            student => student.id == studentID
+        );
+        return student.name;
+    }
+}
+
+var fullTime = defineStudent();
+fullTime.getName(73);            // Suzy
+
+```
+
+## Node CommonJS Modules
+
+```javascript
+module.exports.getName = getName;
+
+// ************************
+
+var records = [
+    { id: 14, name: "Kyle", grade: 86 },
+    { id: 73, name: "Suzy", grade: 87 },
+    { id: 112, name: "Frank", grade: 75 },
+    { id: 6, name: "Sarah", grade: 91 }
+];
+
+function getName(studentID) {
+    var student = records.find(
+        student => student.id == studentID
+    );
+    return student.name;
+}
+```
+
+
+```javascript
+var Student = require("/path/to/student.js");
+
+Student.getName(73);
+// Suzy
+```
+
+## Modern ES Modules (ESM)
+
+```javascript
+export { getName };
+
+// ************************
+
+var records = [
+    { id: 14, name: "Kyle", grade: 86 },
+    { id: 73, name: "Suzy", grade: 87 },
+    { id: 112, name: "Frank", grade: 75 },
+    { id: 6, name: "Sarah", grade: 91 }
+];
+
+function getName(studentID) {
+    var student = records.find(
+        student => student.id == studentID
+    );
+    return student.name;
+}
+```
+
+```javascript
+export function getName(studentID) {
+    // ..
+}
+```
+
+```javascript
+import { getName } from "/path/to/students.js";
+```
+
+```javascript
+export default function getName(studentID) {
+    // ..
+}
+```
+
+```javascript
+import getName from "/path/to/students.js";
+```
+
+```javascript
+import * as Student from "/path/to/students.js";
+
+Student.getName(1);
+```
