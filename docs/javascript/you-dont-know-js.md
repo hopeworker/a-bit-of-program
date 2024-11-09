@@ -4,6 +4,46 @@
 [github book link](https://github.com/getify/You-Dont-Know-JS/)
 :::
 
+## Chapter 2: Illustrating Lexical Scope
+
+```javascript
+// outer/global scope: RED
+
+var students = [
+    { id: 14, name: "Kyle" },
+    { id: 73, name: "Suzy" },
+    { id: 112, name: "Frank" },
+    { id: 6, name: "Sarah" }
+];
+
+function getStudentName(studentID) {
+    // function scope: BLUE
+
+    for (let student of students) {
+        // loop scope: GREEN
+
+        if (student.id == studentID) {
+            return student.name;
+        }
+    }
+}
+
+var nextStudent = getStudentName(73);
+console.log(nextStudent);   // Suzy
+
+```
+
+![illustrate scope](./illstrate-scope.png)
+
+### 函数参数可以看做函数内部定义的一个本地变量
+Inside the **getStudentName** function body, **studentID** is treated as a **local variable**.
+
+### 箭头函数和this指针
+在 JavaScript 中，普通函数的 this 会根据调用的方式动态改变。  
+而箭头函数（arrow function），作为一种匿名函数，它的 this 是在定义时就固定好的，绑定到创建它的作用域中的 this，这就是“词法绑定” this 的含义.
+
+
+
 ## Chapter 4
 ### Around the Global Scope
 #### Globals Shadowing Globals
@@ -101,7 +141,7 @@ const theGlobalScopeObject =
     (new Function("return this"))();
 ```
 
-## Chapter 5: The (Not So) Secret Lifecycle of Variables
+## Chapter 5: Lifecycle of Variables
 
 ### Hoisting: Declaration vs. Expression
 A function declaration is hoisted and initialized to its function value (again, called function hoisting). A var variable is also hoisted, and then auto-initialized to undefined. Any subsequent function expression assignments to that variable don't happen until that assignment is processed during runtime execution.
@@ -592,7 +632,7 @@ fullTime.getName(73);            // Suzy
 
 ```
 
-## Node CommonJS Modules
+### Node CommonJS Modules
 
 ```javascript
 module.exports.getName = getName;
@@ -622,7 +662,7 @@ Student.getName(73);
 // Suzy
 ```
 
-## Modern ES Modules (ESM)
+### Modern ES Modules (ESM)
 
 ```javascript
 export { getName };
