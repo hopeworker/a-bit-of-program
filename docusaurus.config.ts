@@ -27,6 +27,11 @@ const config: Config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
+  // support mermaid for markdown diagram
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
