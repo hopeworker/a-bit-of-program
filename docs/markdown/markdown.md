@@ -130,3 +130,15 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+
+```mermaid
+---
+title: Node
+---
+flowchart LR
+    a --> b
+    c
+    c -.-> a
+    
+```

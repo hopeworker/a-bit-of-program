@@ -68,3 +68,6 @@ Closure is when a function remembers and continues to access variables from outs
 
 context-aware functions that are called without any context specified default the context to the global object
 
+spot check logs
+
+soz
