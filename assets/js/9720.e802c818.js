@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunka_bit_of_program=self.webpackChunka_bit_of_program||[]).push([[9720],{9720:(e,r,a)=>{a.d(r,{createArchitectureServices:()=>c.S});var c=a(9936);a(9369)}}]);
