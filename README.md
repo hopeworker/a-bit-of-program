@@ -1,5 +1,7 @@
 # Website
 
+https://hopeworker.github.io/a-bit-of-program
+
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Local Development
