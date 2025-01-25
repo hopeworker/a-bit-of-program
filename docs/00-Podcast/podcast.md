@@ -11,4 +11,5 @@ Podcast [Web Design Business with Josh Hall](https://joshhall.co)
 
 ## Why we need record seperate audio file for each participant
 After 1 round of chat, we need translate some part to more fluent english expression in 2 round. Each participant is responsible for translating their own part.
-![record sperate audio setting](./record-seperate-audio-for-each-participant.png)
+![record sperate audio setting](./seperate-audio-setting.png)
+![seperate audio files](./record-seperate-audio-for-each-participant.png)
