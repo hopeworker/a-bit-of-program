@@ -15,3 +15,7 @@ hostinger dashboard -> Files -> File manager
 install All-In-One-WP-Migration-With-Import plugin: https://github.com/d0n601/All-In-One-WP-Migration-With-Import
 upload backup file in folder: wp-content -> ai1wm-backups
 restore from uploaded backup file
+
+
+## Setup gmail for wordpress
+https://wpmailsmtp.com/docs/how-to-set-up-the-gmail-mailer-in-wp-mail-smtp/?utm_source=WordPress&utm_medium=setup-wizard&utm_campaign=liteplugin&utm_content=Read%20how%20to%20set%20up%20the%20Gmail%20mailer#create-app
