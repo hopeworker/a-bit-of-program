@@ -16,7 +16,7 @@
 9. 今天的内容够了
 
 
-## 节目中提到的产品
+## 节目中提到的好物分享
 自动皂液器
 
 ![auto soap dispenser](./auto-liquid-dispenser.jpg)
