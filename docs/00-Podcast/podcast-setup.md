@@ -32,3 +32,5 @@ https://www.ximalaya.com/album/86658945.xml
 ## Apple Podcast Connect
 https://podcastsconnect.apple.com/my-podcasts
 
+## 将节目插入微信公众号，（公众号菜单或文章中）
+https://m.ximalaya.com/gatekeeper/mp-anchor-guide
