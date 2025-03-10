@@ -5,10 +5,12 @@
 
 ## 节目中推荐的产品
 自动皂液器
+
 ![auto soap dispenser](./auto-liquid-dispenser.jpg)
 
 
 笔记本电脑支架
+
 ![laptop-stand](./laptop-stand.jpg)
 
 ## 需要改进的地方

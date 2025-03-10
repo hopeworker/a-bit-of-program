@@ -27,6 +27,19 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: '',
+    Svg: require('@site/static/img/sea-sun.svg').default,
+    description: (
+      <>
+        <Link
+          className="button button--primary button--lg"
+          to="/docs/Podcast/episodes/main">
+          播客
+        </Link>
+      </>
+    ),
+  },
+  {
+    title: '',
     Svg: require('@site/static/img/sizi.svg').default,
     description: (
       <>
@@ -37,19 +50,6 @@ const FeatureList: FeatureItem[] = [
             博客
           </Link>
         </div>
-      </>
-    ),
-  },
-  {
-    title: '',
-    Svg: require('@site/static/img/sea-sun.svg').default,
-    description: (
-      <>
-        <Link
-          className="button button--secondary button--lg"
-          to="/docs/main">
-          待续。。。
-        </Link>
       </>
     ),
   },
