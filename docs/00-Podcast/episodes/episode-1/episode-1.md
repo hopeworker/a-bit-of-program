@@ -1,17 +1,6 @@
-## 那我们就随便英文聊聊吧
 
-## 讨论第一集的主题
+# 讨论第一集的主题
 
-
-## 节目中推荐的产品
-自动皂液器
-
-![auto soap dispenser](./auto-liquid-dispenser.jpg)
-
-
-笔记本电脑支架
-
-![laptop-stand](./laptop-stand.jpg)
 
 ## 需要改进的地方
 
@@ -27,3 +16,12 @@
 9. 今天的内容够了
 
 
+## 节目中提到的产品
+自动皂液器
+
+![auto soap dispenser](./auto-liquid-dispenser.jpg)
+
+
+笔记本电脑支架
+
+![laptop-stand](./laptop-stand.jpg)
