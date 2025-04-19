@@ -27,3 +27,5 @@ It is not possible for your site visitors to purchase a course without a user ac
 
 WooCommerce -> Settings -> Accounts & Privary -> Account Creation -> During Checkout
 
+
+
