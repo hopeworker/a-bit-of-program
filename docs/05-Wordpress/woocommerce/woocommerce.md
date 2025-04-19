@@ -17,3 +17,13 @@ https://dashboard.stripe.com/settings/payments
 ### add cart&checkout page
 https://www.youtube.com/watch?v=668Tya-AuiQ&t=2s
 
+## menus
+add "Cart" page in menu
+
+## You must be logged in to checkout. Click here to log in.
+https://wordpress.org/support/topic/you-must-be-logged-in-to-checkout-2/
+
+It is not possible for your site visitors to purchase a course without a user account. So they will need to sign in or create an account.
+
+WooCommerce -> Settings -> Accounts & Privary -> Account Creation -> During Checkout
+
