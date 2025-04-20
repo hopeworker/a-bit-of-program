@@ -42,3 +42,8 @@ https://github.com/woocommerce/woocommerce-gateway-stripe/pull/4178
 
 ## Disable auto updates
 plugin: Easy Updates Manager
+
+
+## mobile version menu has all the items - not the same as desktop version
+make Primary Menu(for desktop) & Off-Canvas Menu(for mobile) the same
+
