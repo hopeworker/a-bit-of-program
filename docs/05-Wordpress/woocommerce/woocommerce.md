@@ -29,3 +29,16 @@ WooCommerce -> Settings -> Accounts & Privary -> Account Creation -> During Chec
 
 
 
+## Add user login/logout
+Ultimate Member
+https://www.youtube.com/watch?v=7ayRmFw9fbs&t=158s
+
+
+## woocommerce checkout lost focus bug fix
+https://wordpress.org/support/topic/bug-report-focus-loss-in-woocommerce-checkout-with-stripe-payment-gateway/
+link to github post: https://github.com/woocommerce/woocommerce-gateway-stripe/issues/4142
+https://github.com/woocommerce/woocommerce-gateway-stripe/pull/4178
+
+
+## Disable auto updates
+plugin: Easy Updates Manager
