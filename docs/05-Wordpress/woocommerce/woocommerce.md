@@ -62,3 +62,5 @@ https://www.paidmembershipspro.com/gateway/stripe/stripe-checkout/
 
 https://www.paidmembershipspro.com/stripe-additional-payment-methods/
 
+https://docs.stripe.com/payments/checkout
+
