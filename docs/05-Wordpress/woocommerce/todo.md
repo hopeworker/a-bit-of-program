@@ -3,3 +3,5 @@
 3. try Gutenberg plugin
 4. AI engine (done, multi-user discussion supported, just need fine tune style)
 5. plugin: Paid Memberships Pro
+   1. support alipay (todo)
+

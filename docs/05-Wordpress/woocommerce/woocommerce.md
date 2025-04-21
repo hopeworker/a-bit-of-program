@@ -53,3 +53,12 @@ make Primary Menu(for desktop) & Off-Canvas Menu(for mobile) the same
 https://meowapps.com/ai-engine/tutorial
 
 
+
+## paid membership pro
+https://www.paidmembershipspro.com/adjust-application-fee-stripe-connect/
+
+## pmpro support alipay
+https://www.paidmembershipspro.com/gateway/stripe/stripe-checkout/
+
+https://www.paidmembershipspro.com/stripe-additional-payment-methods/
+
