@@ -47,3 +47,9 @@ plugin: Easy Updates Manager
 ## mobile version menu has all the items - not the same as desktop version
 make Primary Menu(for desktop) & Off-Canvas Menu(for mobile) the same
 
+
+
+## ai engine
+https://meowapps.com/ai-engine/tutorial
+
+
