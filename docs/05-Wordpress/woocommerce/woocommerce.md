@@ -64,3 +64,24 @@ https://www.paidmembershipspro.com/stripe-additional-payment-methods/
 
 https://docs.stripe.com/payments/checkout
 
+
+## create membership through woocommerce product
+https://www.paidmembershipspro.com/add-ons/pmpro-woocommerce/?utm_source=plugin&utm_medium=pmpro-addons&utm_campaign=add-ons&utm_content=pmpro-woocommerce#video
+
+
+
+## debug checkout page error
+https://wordpress.org/support/topic/error-page-checkout-woocommerce/
+
+
+
+## plugin: Checkout Field Editor
+### unable to modify checkout field
+https://www.reddit.com/r/Wordpress/comments/1agnjgl/unable_to_modify_checkout_fields/
+
+## use PMPR login form to hidden menu in welcome menu
+edit PMPR login page, remove  [pmpr_login] with login form block
+
+## fix mobile zoom in cause by input field in AI Engine
+使用 Theme file editor 添加 header meta tag
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width, user-scalable=no" />
