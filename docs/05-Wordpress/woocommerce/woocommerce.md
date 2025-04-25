@@ -85,6 +85,7 @@ edit PMPR login page, remove  [pmpr_login] with login form block
 ## fix mobile zoom in cause by input field in AI Engine
 使用 Theme file editor 添加 header meta tag
 <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width, user-scalable=no" />
+use snippets plugin in functions.php instead.
 
 ## AI engine generate image
 can generate image in backend, 'editor' role can use tools in wp admin.
@@ -92,3 +93,8 @@ the dall
 
 ## change url after user logout
 To change the WordPress logout page, you'll want to redirect users to a different URL after they log out. This can be achieved by adding a custom redirect using a plugin like "WP Login and Logout Redirect"
+
+
+## customize content restriction message
+user snippets plugin
+https://www.paidmembershipspro.com/documentation/content-controls/protected-content-messages/
