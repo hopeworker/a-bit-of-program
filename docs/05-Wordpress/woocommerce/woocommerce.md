@@ -138,3 +138,19 @@ You must have one of the following membership levels to access this content:
 Join Now
 
 sometimes 404 error show in front page when switch language, need deactivate/active plugin.
+
+## remove storefront woocommerce footer message
+
+```php
+function remove_storefront_credit() {
+    remove_action( 'storefront_footer', 'storefront_credit', 20 );
+    add_action( 'storefront_footer', function() {
+        ?>
+        <div class="site-info">
+            © little little code 2025
+        </div>
+        <?php
+    }, 20 );
+}
+add_action( 'init', 'remove_storefront_credit' );
+```
