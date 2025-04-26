@@ -1,5 +1,7 @@
 ## After install woocommerce all website pages lost css style
 用start template，选择带woocommerce的模版，选择woocommerce插件，重新安装一遍就解决了。
+finally use storefront theme for the website, no need start template and elementor.
+
 
 ## Stripe checkout
 行业：其他个人服务
