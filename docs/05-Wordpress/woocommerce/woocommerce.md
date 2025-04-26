@@ -98,3 +98,43 @@ To change the WordPress logout page, you'll want to redirect users to a differen
 ## customize content restriction message
 user snippets plugin
 https://www.paidmembershipspro.com/documentation/content-controls/protected-content-messages/
+
+
+## how to remove sidebar
+https://www.youtube.com/watch?app=desktop&v=3tl6iSG-9kI&t=162s
+
+change page settings: Template use Full width
+
+## storefront not show title in pages
+
+Storefront Title Toggle Plugin
+
+Storefront Title Toggle Plugin: The Storefront Title Toggle plugin allows you to hide page titles. If activated, you might have accidentally checked the "Hide Title" box on the page edit screen
+
+
+## change font size and color of AI Engine
+.mwai-messages-theme {
+    --mwai-fontSize: 18px !important;
+    --mwai-conversationsBackgroundColor: #f7f4e8 !important;
+}
+Paste this into Appearance > Customize > Additional CSS:
+
+## change menu font size
+https://www.youtube.com/watch?v=-mu8SOA06RQ&t=2s
+
+.main-navigation ul li a {
+	font-size: 20px;
+}
+Paste this into Appearance > Customize > Additional CSS:
+
+#f7f5f4
+
+
+## polylang 
+
+change snipet to add chinese for PMPro message:
+Join The membership For Access
+You must have one of the following membership levels to access this content:
+Join Now
+
+sometimes 404 error show in front page when switch language, need deactivate/active plugin.
