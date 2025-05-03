@@ -158,7 +158,12 @@ add_action( 'init', 'remove_storefront_credit' );
 ```
 
 
+### 使用TranslatPress
+1. 设置不force custome link，解决中文网站url不正确问题。
+2. 修改PMPPro restrict content 代码片段支持中文
+3. 使用Gettext string翻译修改woocommerce和PMPro内置字符翻译
 
 Your cart is currently empty!
 New in store
+
 
