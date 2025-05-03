@@ -156,3 +156,9 @@ function remove_storefront_credit() {
 }
 add_action( 'init', 'remove_storefront_credit' );
 ```
+
+
+
+Your cart is currently empty!
+New in store
+
