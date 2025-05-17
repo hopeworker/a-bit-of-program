@@ -18,3 +18,10 @@ WPCode - insert php code into pages
     <p><a href="<?php echo home_url('/login-2'); ?>">Login to your account</a></p>
     <p><a href="<?php echo home_url('/registration'); ?>">Create a new account</a></p>
 <?php endif; ?>
+
+
+## Ultimate Member
+https://www.youtube.com/watch?v=7ayRmFw9fbs&t=99s
+最终还是采用这个插件。
+
+
