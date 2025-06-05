@@ -1,6 +1,7 @@
 ## contact form 7
 https://www.namecheap.com/support/knowledgebase/article.aspx/10147/2282/easywp-how-to-set-up-wordpress-contact-form-7/
 
+https://blog.cf7skins.com/beginner-guide-setting-up-mail-contact-form-7/
 
 ## DS CF7 Math Captcha
 
@@ -18,5 +19,8 @@ SMTP Username: email name
 SMTP Password: hw.mail.163.com -> 设置 -> POP3/SMTP/IMAP -> 开启 “POP3/SMTP服务” -> 授权密码管理
 
 
-## brevo - easy smtp 
-https://easywpsmtp.com/docs/setting-up-the-sendinblue-mailer/?utm_source=WordPress&utm_medium=plugin-settings&utm_campaign=liteplugin&utm_locale=en_us&utm_content=Brevo%20documentation
+
+
+## mailtrap
+use github to login
+https://mailtrap.io/home
