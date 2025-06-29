@@ -11,6 +11,7 @@ https://developer.wordpress.org/resource/dashicons/#buddicons-topics
 掌握 HTML + CSS（基础 + Flexbox + 响应式）
 
 学习 WordPress 主题结构与样式加载机制
+    1. 学习underscore主题
 
 做几个静态网页设计练习，再转成 WordPress 模板
 
@@ -20,3 +21,8 @@ https://developer.wordpress.org/resource/dashicons/#buddicons-topics
 
 ## 临摹网站
 https://www.ku.com.au/about-us
+
+https://generatepress.com/site-library/
+myPet
+
+
