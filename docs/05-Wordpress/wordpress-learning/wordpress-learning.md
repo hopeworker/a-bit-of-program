@@ -26,3 +26,5 @@ https://generatepress.com/site-library/
 myPet
 
 
+## 学习网站连接pos机/打印机
+例如外卖，汉堡店等需要订单信息。
