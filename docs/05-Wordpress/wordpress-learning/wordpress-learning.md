@@ -27,4 +27,21 @@ myPet
 
 
 ## 学习网站连接pos机/打印机
-例如外卖，汉堡店等需要订单信息。
+例如外卖，汉堡店等需要订单信息。  
+https://woocommerce.com/document/automatic-order-printing-for-woocommerce/  
+
+       🌐 WordPress/WooCommerce 网站
+                     │
+             👇 插件发送订单（API）
+                     │
+            🌩️ PrintNode 云服务器
+                     │
+         👇 推送订单内容（加密的）
+                     │
+          💻 本地电脑运行 PrintNode 客户端
+                     │
+             👉 本地连接的 USB 打印机
+                     │
+               🖨️ 打印订单小票
+
+
