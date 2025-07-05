@@ -6,6 +6,11 @@ https://wpshout.com/wordpress-template-hierarchy/
 (include block theme explanation)
 
 
+## Underscores
+https://underscores.me/
+https://www.youtube.com/watch?v=8uYSLxJbPEY&t=12020s
+https://www.youtube.com/watch?v=LdTWGvP1k2Q&list=LL&index=3
+
 
 ## Storefront
 Storefront is based on underscores theme,
