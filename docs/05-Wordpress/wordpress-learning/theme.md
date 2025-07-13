@@ -18,3 +18,8 @@ Storefront is based on underscores theme,
 ### How to get child theme
 buy free themes in woocommerce website, then in woocommerce account -> downloads can find childtheme zip files.  
 https://woocommerce.com/product-category/themes/?categoryIds=1033&collections=theme&page=1
+
+
+
+## Declare WooCommerce support in themes
+https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes

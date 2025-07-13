@@ -1,0 +1,124 @@
+<!-- Fix2U 风格预约系统：带 Bootstrap 进度条，可嵌入页面 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container my-5 p-4 border rounded bg-light">
+  <h2 class="mb-4">预约维修服务</h2>
+
+  <!-- Progress Bar -->
+  <div class="progress mb-4">
+    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 25%;">步骤 1 / 4</div>
+  </div>
+
+  <form id="multiStepForm">
+    <!-- Step 1: 品牌 -->
+    <div class="step active" id="step1">
+      <h5>1. 请选择手机厂商</h5>
+      <button type="button" class="btn btn-primary m-2" onclick="chooseBrand('Apple')">Apple</button>
+      <button type="button" class="btn btn-primary m-2" onclick="chooseBrand('Samsung')">Samsung</button>
+      <input type="hidden" name="brand" id="brand">
+    </div>
+
+    <!-- Step 2: 型号 -->
+    <div class="step" id="step2">
+      <h5>2. 请选择型号</h5>
+      <div id="model-options"></div>
+      <input type="hidden" name="model" id="model">
+    </div>
+
+    <!-- Step 3: 颜色 -->
+    <div class="step" id="step3">
+      <h5>3. 请选择颜色</h5>
+      <div id="color-options" class="mb-3">
+        <div class="color-box" style="background:red" data-color="Red"></div>
+        <div class="color-box" style="background:blue" data-color="Blue"></div>
+        <div class="color-box" style="background:black" data-color="Black"></div>
+      </div>
+      <input type="hidden" name="color" id="color">
+      <button type="button" class="btn btn-primary" onclick="goToStep(4)">下一步</button>
+    </div>
+
+    <!-- Step 4: 联系方式 -->
+    <div class="step" id="step4">
+      <h5>4. 填写联系方式</h5>
+      <div class="mb-3">
+        <label class="form-label">姓名：</label>
+        <input type="text" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">电话：</label>
+        <input type="tel" name="phone" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">提交预约</button>
+    </div>
+  </form>
+</div>
+
+<style>
+  .step { display: none; }
+  .step.active { display: block; }
+  .color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .color-box.selected {
+    border: 2px solid black;
+  }
+</style>
+
+<script>
+  let currentStep = 1;
+
+  function updateProgressBar() {
+    const percent = (currentStep / 4) * 100;
+    const bar = document.getElementById("progressBar");
+    bar.style.width = percent + "%";
+    bar.innerText = `步骤 ${currentStep} / 4`;
+  }
+
+  function goToStep(n) {
+    document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    currentStep = n;
+    updateProgressBar();
+  }
+
+  function chooseBrand(brand) {
+    document.getElementById('brand').value = brand;
+    const models = {
+      Apple: ['iPhone 13', 'iPhone 14', 'iPhone SE'],
+      Samsung: ['Galaxy S21', 'Galaxy Note 10']
+    };
+    const modelHTML = models[brand].map(m => `<button type=\"button\" class=\"btn btn-outline-primary m-2\" onclick=\"chooseModel('${m}')\">${m}</button>`).join('');
+    document.getElementById('model-options').innerHTML = modelHTML;
+    goToStep(2);
+  }
+
+  function chooseModel(model) {
+    document.getElementById('model').value = model;
+    goToStep(3);
+  }
+
+  document.querySelectorAll('.color-box').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.color-box').forEach(box => box.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('color').value = el.getAttribute('data-color');
+    });
+  });
+
+  document.getElementById('multiStepForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const summary = [...formData.entries()].map(([k, v]) => `${k}: ${v}`).join('\n');
+    alert("预约提交成功！\n\n" + summary);
+    this.reset();
+    goToStep(1);
+  });
+
+  updateProgressBar();
+</script>
