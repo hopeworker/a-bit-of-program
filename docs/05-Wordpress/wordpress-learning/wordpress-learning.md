@@ -11,8 +11,10 @@ https://developer.wordpress.org/resource/dashicons/#buddicons-topics
 学习 WordPress 主题结构与样式加载机制
     1. 学习underscore主题 + Bootstrap.
         https://www.youtube.com/watch?v=8uYSLxJbPEY&list=LL&index=2
-       
-
+    2. Woocommerce
+        https://developer.woocommerce.com/docs/theming/theme-development/classic-theme-developer-handbook/
+        
+ 
 选 Astra 主题
 选 Gutenburge 做项目
 
