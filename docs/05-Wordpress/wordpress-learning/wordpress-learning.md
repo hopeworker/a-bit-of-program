@@ -6,24 +6,25 @@ Become a WordPress Developer: Unlocking Power With Code
 https://developer.wordpress.org/resource/dashicons/#buddicons-topics
 
 
-## 建议的学习路径（实用导向）
-
+## 学习路径
 掌握 HTML + CSS（基础 + Flexbox + 响应式）
-
 学习 WordPress 主题结构与样式加载机制
-    1. 学习underscore主题
+    1. 学习underscore主题 + Bootstrap.
+        https://www.youtube.com/watch?v=8uYSLxJbPEY&list=LL&index=2
+       
+
+选 Astra 主题
+选 Gutenburge 做项目
+
+每天刷一个漂亮的设计作品做临摹
 
 做几个静态网页设计练习，再转成 WordPress 模板
 
-选一个主题或页面构建器（如 Elementor）做项目
-
-每天刷一个漂亮的设计作品做临摹 + 模仿
-
 ## 临摹网站
-https://www.ku.com.au/about-us
-
 https://generatepress.com/site-library/
 myPet
+
+https://www.ku.com.au/about-us
 
 
 ## 学习网站连接pos机/打印机
