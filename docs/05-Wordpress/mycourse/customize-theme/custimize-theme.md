@@ -14,6 +14,8 @@ plugins/woocommerce/includes/wc-template-functions.php
 定义 woocommerce_get_sidebar 的实现，最终是在安装的theme中，找到sidebar.php。
 最终获取的是 Appearance -> Widgets -> Sidebar
 
+在 plugins/woocommerce/templates/single-product.php
+do_action( 'woocommerce_sidebar' ); 执行
 
 plugins/woocommerce/includes/wc-template-hooks.php
 add_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
