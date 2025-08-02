@@ -47,9 +47,6 @@ https://woocommerce.com/document/automatic-order-printing-for-woocommerce/
                      │
                🖨️ 打印订单小票
 
-
-
-
 ## Tools
 https://woocommerce.github.io
 https://caniuse.com/
