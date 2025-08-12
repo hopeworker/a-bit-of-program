@@ -23,3 +23,11 @@ https://woocommerce.com/product-category/themes/?categoryIds=1033&collections=th
 
 ## Declare WooCommerce support in themes
 https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
+
+
+
+
+## Blog themes
+1. RCG Forest
+2. twenty twelve
+

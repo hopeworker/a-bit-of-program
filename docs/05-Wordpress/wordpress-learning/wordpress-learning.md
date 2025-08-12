@@ -29,6 +29,12 @@ myPet
 https://www.ku.com.au/about-us
 
 
+https://blog.brain1981.com/
+RCG Forest
+
+https://zyyo.cc/
+
+
 ## 学习网站连接pos机/打印机
 例如外卖，汉堡店等需要订单信息。  
 https://woocommerce.com/document/automatic-order-printing-for-woocommerce/  
