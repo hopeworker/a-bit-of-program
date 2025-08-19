@@ -10,6 +10,13 @@ https://getbootstrap.com/docs/5.3/customize/sass/
 #### Woocommerce Classic theme development handbook
 https://developer.woocommerce.com/docs/theming/theme-development/classic-theme-developer-handbook/
 
+
+[products orderby=”popularity” order=”DESC”]
+
+```php
+ <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured" orderby="popularity" order="DESC"]') ?>
+```
+
 #### widget
 https://developer.wordpress.org/reference/functions/register_sidebar/
 
