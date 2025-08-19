@@ -33,3 +33,9 @@ https://www.shapedivider.app/
 
 ## color picker - china
 https://www.qiguangit.com/colorPicker/
+
+
+## contact form 7 customize
+https://contactform7.com/faq/can-i-add-id-and-class-attributes-to-a-form-element/#:~:text=Can%20I%20add%20id%20and%20class%20attributes%20to,%C2%A9%20Rock%20Lobster%2C%20LLC.%20Proudly%20powered%20by%20WordPress
+
+[contact-form-7 id="af6fb1c" title="Contact form 1" html_id="aboutus-contact-form" html_class="form contact-form"]
