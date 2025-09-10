@@ -11,6 +11,8 @@ https://getbootstrap.com/docs/5.3/customize/sass/
 https://developer.woocommerce.com/docs/theming/theme-development/classic-theme-developer-handbook/
 
 
+https://woocommerce.com/document/woocommerce-shortcodes/products/
+
 [products orderby=”popularity” order=”DESC”]
 
 ```php
