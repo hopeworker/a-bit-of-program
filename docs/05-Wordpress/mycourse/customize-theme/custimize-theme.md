@@ -1,4 +1,47 @@
 ## Project Show case
+大家好，我是小熊。欢迎来到我的视频教程。
+在这套视频教程里面，我们将会基于Underscores启动模版，开发自己的WordPress经典主题。
+
+使用这个主题，我们可以搭建定制自己的网站，并且网站也集成了WooCommerce电商的功能。
+
+如果你有一些最基本的html，css，javascript 和php的基础知识最好。
+如果没有的话，也是可以的。因为我们会逐行手敲代码的并每一步实现的功能和呈现出来的效果。对于关键的原理，会深入的讲解。
+下面我们展示主题的最终效果。包括桌面端和移动端。
+
+
+WordPress 经典主题开发
+
+本课程主要介绍WordPress的经典主题开发。
+基于Underscores主题，一步一步开发自己定义的主题。
+包含的内容主要有
+1. WordPress 主题开发环境的准备
+2. Vscode及使用的插件介绍
+3. 理解模版文件结构及其功能。
+4. 安装字体
+5. 安装图标
+6. 导航栏菜单折叠的原理
+7. 菜单样式的定制
+8. 页眉添加背景图片。
+9. 移动设备菜单显示问题的分析及解决
+10. 主页hero section的开发
+11. 主页services section的开发
+12. 接入WooCommerce插件
+13. 主页产品展示部分的开发
+14. 产品展示部分样式调整-基于WooCommerce默认样式
+15. 自定义WooCommerce样式
+16. 修改WooCommerce默认的模版文件-hook方式
+17. WooCommerce mini cart的添加
+18. WooCommerce mini cart的动态更新功能
+19. WooCommerce mini cart样式的自定义
+20. 深入理解WooCommerce mini cart动态更新功能的实现原理
+21. Page模版文件的修改-Store页面的制作
+22. 结合古腾堡(Gutenberg)编辑器制作Services页面
+23. 制作Contact页面-Contact Form 7的使用及样式调整
+
+
+希望你能够在这套视频教程里有所收获。对应任何的问题或者疑惑也欢迎给我留言或者联系我。
+感谢你的观看，再见。
+
 
 ### 1. Website show
 
@@ -15,11 +58,13 @@ https://gstatic.aby.pub/
 2. install in local
 
 ### WooCommerce
+https://woocommerce.com/document/woocommerce-customize-your-store/
+https://developer.woocommerce.com/docs/theming/theme-development/template-structure/
 
 #### 如何查询woocommerce的hook和作用
-https://woocommerce.github.io/code-reference/hooks/hooks.html
-
 https://www.hostinger.com/tutorials/woocommerce-hooks
+
+https://woocommerce.github.io/code-reference/hooks/hooks.html
 
 https://www.businessbloomer.com/woocommerce-visual-hook-guide-single-product-page/
 
@@ -128,16 +173,44 @@ http://sophone.local/?wc-ajax=remove_from_cart
 
 /woocommerce/assets/js/frontend/add-to-cart.js
 
-```php
+```js
 AddToCartHandler.prototype.onAddToCart
 
-// add-to-cart.js update mini cart
-AddToCartHandler.prototype.updateFragments = function( e, fragments ) {
-}
 
-// add-to-cart.js update mini cart
+/**
+ * Callbacks after added to cart event.
+ */
+AddToCartHandler.prototype.onAddedToCart = function( e, fragments, cart_hash, $button ) {
+    e.data.addToCartHandler.updateButton( e, fragments, cart_hash, $button );
+    e.data.addToCartHandler.updateFragments( e, fragments );
+    e.data.addToCartHandler.alertCartUpdated( e, fragments, cart_hash, $button );
+};
+
+/**
+ * Update fragments after add to cart events.
+ */
 AddToCartHandler.prototype.updateFragments = function( e, fragments ) {
-}
+    if ( fragments ) {
+        $.each( fragments, function( key ) {
+            $( key )
+                .addClass( 'updating' )
+                .fadeTo( '400', '0.6' )
+                .block({
+                    message: null,
+                    overlayCSS: {
+                        opacity: 0.6
+                    }
+                });
+        });
+
+        $.each( fragments, function( key, value ) {
+            $( key ).replaceWith( value );
+            $( key ).stop( true ).css( 'opacity', '1' ).unblock();
+        });
+
+        $( document.body ).trigger( 'wc_fragments_loaded' );
+    }
+};
 
 ```
 ### in different tabs and page init, mini cart updated by cart-fragments.js
@@ -193,4 +266,71 @@ function wp_localize_script( $handle, $object_name, $l10n ) {
 }
 
 
+```
+
+
+## contact form 7 customize
+https://contactform7.com/faq/can-i-add-id-and-class-attributes-to-a-form-element/#:~:text=Can%20I%20add%20id%20and%20class%20attributes%20to,%C2%A9%20Rock%20Lobster%2C%20LLC.%20Proudly%20powered%20by%20WordPress
+
+[contact-form-7 id="af6fb1c" title="Contact form 1" html_id="aboutus-contact-form" html_class="form contact-form"]
+
+
+```css
+
+.contact-form {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#aboutus-contact-form.form p {
+	width: 100%;
+}
+
+#aboutus-contact-form.form input,
+#aboutus-contact-form.form textarea {
+	width: 100%;
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 10px 6px;
+	margin-bottom: 10px;
+}
+
+#aboutus-contact-form.form input:focus {
+	outline: none;	
+	border: 2px solid var(--sophone-bg-divider-color);
+}
+
+#aboutus-contact-form.form textarea {
+	resize: none; 
+}
+
+#aboutus-contact-form.form textarea:focus {
+	outline: none;
+	border: 2px solid var(--sophone-bg-divider-color);
+}
+
+#aboutus-contact-form.form input[type=submit] {
+    display: inline-flex;
+    background-color: var(--sophone-button-primary-color);
+  
+	font-weight: normal;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+    border-radius: 8px;
+    padding: 10px 30px;
+}
+
+#aboutus-contact-form.form input[type=submit]:hover {
+    background-color: var(--sophone-button-secondary-color);
+    color: var(--sophone-highlight-primary-color);
+}
 ```
