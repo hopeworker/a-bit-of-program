@@ -34,6 +34,12 @@ RCG Forest
 
 https://zyyo.cc/
 
+## web design & development websites
+https://keganquimby.com/
+    1. https://www.writable.com/
+
+https://clutch.co/web-developers
+
 
 ## 学习网站连接pos机/打印机
 例如外卖，汉堡店等需要订单信息。  
